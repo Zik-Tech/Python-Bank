@@ -7,4 +7,4 @@ it is an app which stimulate the online banking system in a much easier way
 To test this app functions you can for the repo then get the code 
 After getting the code you can copy the code and run it in any python IDE like pycharm or online python editor like replit
 or you just use this link
-https://replit.com/@Zik-Tech/Python-Bank#Izik-Bank.py
+https://replit.com/@Zik-Tech/Python-Bank?v=1
