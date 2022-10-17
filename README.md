@@ -8,3 +8,6 @@ To test this app functions you can for the repo then get the code
 After getting the code you can copy the code and run it in any python IDE like pycharm or online python editor like replit
 or you just use this link
 https://replit.com/@Zik-Tech/Python-Bank?v=1
+
+## Version 1.0.0
+All functions of this program has been developed to the highest level of my understanding of python.As I further advance my skills in python programming i'll further advance the app
