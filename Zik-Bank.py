@@ -112,7 +112,7 @@ def bank_startup(database):
         bank_startup(database)
 
 
-# Bank operations
+# The function that holds in all other function
 def bank_operations(database):
     print(f"Hello {database [serial_num] [0]} {database [serial_num] [1]} welcome to ZIK-BANK.\n ")
     operation = input(f"what would you like to do today:"
@@ -128,14 +128,14 @@ def bank_operations(database):
     elif operation == 4:
         details(database)
     elif operation == 5:
-        log_in(database)
+        bank_startup(database)
     elif operation == 6:
         exit()
     else:
         print("invalid option choosen")
         bank_operations(database)
 
-
+# The function that accepts user deposit
 def deposit(database):
     print(f"{d} Deposit {d}")
     amount = int(input(f"Hello {database [serial_num] [1]} how much would you like to deposit: "))
@@ -157,15 +157,26 @@ def deposit(database):
         print("Invalid input")
         log_in(database)
 
-
+# The withdrawal Function
 def withdraw(database):
     print(f"{d} Withdraw {d}")
+    database [serial_num] [-1] = int(database [serial_num] [-1])
     print(f"Your balance is {database [serial_num] [-1]}")
     withdrawal_amount = int(input("How much would you like to withdraw: "))
-    if withdrawal_amount <= database[serial_num][-1]:
+    if withdrawal_amount <= database [serial_num] [-1]:
         withdrawal_pin = int(input("Input your pin: "))
-        if withdrawal_pin == database[serial_num][-2]
-
+        if withdrawal_pin == database [serial_num] [-2]:
+            database [serial_num] [-1] = database [serial_num] [-1] - withdrawal_amount
+            print(database [serial_num] [-1])
+        else:
+            while (withdrawal_pin != database [serial_num] [-2]):
+                print("Incorrect Pin")
+                print()
+                withdraw(database)
+    else:
+        while (withdrawal_amount > database [serial_num] [-1]):
+            print("You do not have up to this amount in your account.")
+            withdraw(database)
 
     print()
     opt = input("would you like to check other bank operations 1.) Yes 2.) No : ")
@@ -178,7 +189,7 @@ def withdraw(database):
         print("Invalid input")
         log_in(database)
 
-
+# The function that holds the user details
 def details(database):
     print(f"{d} Your Bank Account Details {d}")
     print(f"Name - {database [serial_num] [0]}-{database [serial_num] [1]}")
@@ -198,11 +209,11 @@ def details(database):
         log_in(database)
     else:
         print("Invalid input")
-        log_in(database)
+        bank_startup(database)
 
-
+# The function that evaluates the user balance
 def balance(database):
-    print(f"Your balance is {database [serial_num] [-1]}")
+    print(f"Your balance is ${database [serial_num] [-1]}")
     print()
     opt = input("would you like to check other bank operations 1.) Yes 2.) No : ")
     opt = int(opt)
